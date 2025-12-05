@@ -9,6 +9,7 @@ The plot below visualises how the top variable proteins change with **Age**.
 
 ```{r, echo=FALSE, out.width="95%"}
 knitr::include_graphics("plot_age_proteins.png")
+knitr::include_graphics("./plot_age_proteins.png")
 The top proteins show diverse age trajectories, suggesting heterogeneity in biomarker aging patterns.
 Sex Differences in Age Trends
 This figure shows Age vs NPQ for each protein, coloured by Sex.
