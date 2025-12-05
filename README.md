@@ -49,25 +49,3 @@ make report
 The Makefile runs:
 rmarkdown::render("report.Rmd", output_format = "pdf_document")
 The output report.pdf will appear in the project directory.
-
-Project Structure
-biostats_proj/
-├── analysis.R                #data cleaning
-├── age_proteins.R            #age trends in top variance proteins
-├── age_regression.R          #linear regression age vs top variance proteins
-├── age_sex.R                 #age trends by Sex
-├── sex_box.R                 #male vs female boxplots
-├── corr_heatmap.R            #protein correlation heatmap
-├── sex_classifier.R          #logistic regression sex classifier
-│
-├── plot_age_proteins.png
-├── plot_age_regression.png
-├── plot_age_sex.png
-├── plot_corr_heatmap.png
-├── plot_sex_box.png
-├── plot_sex_classifier.png
-│
-├── Makefile                  
-├── report.Rmd         
-├── Dockerfile                
-└── README.md
