@@ -3,47 +3,41 @@ title: "report"
 output: pdf_document
 ---
 
-#age trends in protein expression
+#plot_age_proteins #plot_age_regression
+These plots visualises how the top 10 variable proteins change with Age.
+Protein CHIT1 increased with age: 
+Older adults have more activated macrophages (white blood cells that act as ‘first responders’ to infections/injuries) and
+release CHIT1 as part of the inflammatory response.
+Macrophages become overactive with age and produce excess inflammatory cytokines which contributes to chronic low-grade inflammation.
+Protein NEFH increased with age:
+NEFH is a neurofilament protein released during axonal stress or turnover. 
+With age, neurons have slower repair mechanisms and degeneration. 
 
-The plot below visualises how the top variable proteins change with **Age**.
+#plot_age_sex
+This plot uses colour to visualise how sex affects the change in the top 10 variable proteins with Age. 
+All of these proteins showed relatively equal colouring of male (blue) and female (red) participants. This means the age-related patterns observed earlier are not strongly sex-dependent.
 
-```{r, echo=FALSE, out.width="95%"}
-knitr::include_graphics("plot_age_proteins.png")
-knitr::include_graphics("./plot_age_proteins.png")
-The top proteins show diverse age trajectories, suggesting heterogeneity in biomarker aging patterns.
-Sex Differences in Age Trends
-This figure shows Age vs NPQ for each protein, coloured by Sex.
-Writing
-knitr::include_graphics("plot_age_sex.png")
+#plot_sex_box
+This box plot displayed relatively similar protein expression distribution between Male and Female, supporting plot_age_sex .
 
-Separate LOESS curves highlight Sex-specific age-related patterns.
-Sex-Based Distribution Differences
-This boxplot compares Male vs Female NPQ levels across proteins.
-Writing
-knitr::include_graphics("plot_sex_box.png")
+#plot_sex_classifier
+Total correct predictions: 38 (Female -> Female) + 24 (Male -> Male) = 62
+Total samples: 150
+Accuracy around 41%, which is below random guessing for a balanced dataset (50%).
+This shows that the classifier did not demonstrate a strong ability to distinguish between males and females.
 
-Many proteins display visible shifts between sexes.
-Protein–Protein Correlation Structure
-Correlation among the top variable proteins is shown below.
-Writing
-knitr::include_graphics("plot_corr_heatmap.png")
+#plot_corr_heatmap
+This correlation heatmap showed mild correlation between certain proteins as well as between Age and proteins. 
 
-Certain proteins cluster strongly together, suggesting shared pathways or assay behavior.
-Logistic Regression Classifier
-A logistic regression classifier was trained to predict Sex from the top 10 proteins.
-Performance is shown in the confusion matrix below:
-Writing
-knitr::include_graphics("plot_sex_classifier.png")
+Future directions: 
+- Study influence of more participant features in analysis 
+Eg. health status, lifestyle factors. 
+- Longitudinal analysis
+Integrate temporal data, studying participants' protein expression over time would strengthen interpretation of age-related effects.
+- Combine with multi-omics data
+eg. genomics can help us identify patterns not visible in proteins alone.
 
-Accuracy was computed as the proportion of correctly predicted labels.
-Summary
-This project demonstrates a complete biological data analysis pipeline:
-Cleaning & merging multiple assay datasets
-Identifying high-variance proteins
-Visualizing age and sex differences
-Correlation analysis
-Logistic classifier modeling
-Automated reproducibility using Makefile + Docker
+
 Running:
 make
 regenerates the entire project 
